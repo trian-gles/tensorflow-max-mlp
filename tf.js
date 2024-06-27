@@ -8,7 +8,7 @@ const outputShape = parseInt(args[1]);
 const hiddenSize = parseInt(args[2]);
 
 // Define a model for linear regression.
-const model = tf.sequential();
+var model = tf.sequential();
 
 
 
@@ -45,5 +45,43 @@ maxApi.addHandler("predict", (...data) => {
     maxApi.outlet(value[0]);
   });
 
+});
+
+async function getWeights() {
+  let weights = model.getWeights();
+  for (let i = 0; i < weights.length; i++){
+    let data = await weights[i].data();
+    let shape = weights[i].shape;
+    weights[i] = {data, shape};
+    
+  }
+  return weights;
+}
+
+maxApi.addHandler("save", (dictId, key) => {
+  maxApi.getDict(dictId).then((dict) => {
+    getWeights().then((weights) => {
+      console.log(weights);
+      dict[key] = weights;
+      maxApi.setDict(dictId, dict);
+    });
+  });
+});
+
+maxApi.addHandler("load", (dictId, key) => {
+  maxApi.getDict(dictId).then((dict) => {
+    let data = dict[key];
+    let tensors = [];
+    data.forEach(item => {
+      let shape = item.shape;
+      let vals = [];
+      for (const [key, value] of Object.entries(item.data)) {
+        vals.push(value);
+
+      }
+      tensors.push(tf.tensor(vals, shape));
+    });
+    model.setWeights(tensors);
+  });
 });
 
