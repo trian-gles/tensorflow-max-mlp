@@ -61,7 +61,6 @@ async function getWeights() {
 maxApi.addHandler("save", (dictId, key) => {
   maxApi.getDict(dictId).then((dict) => {
     getWeights().then((weights) => {
-      console.log(weights);
       dict[key] = weights;
       maxApi.setDict(dictId, dict);
     });
