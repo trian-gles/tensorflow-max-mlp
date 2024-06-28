@@ -12,7 +12,7 @@ var model = tf.sequential();
 
 
 
-model.add(tf.layers.dense({units: hiddenSize, inputShape: [inputShape]}));
+model.add(tf.layers.dense({units: hiddenSize, inputShape: [inputShape], activation: 'relu'}));
 model.add(tf.layers.dense({units: outputShape}));
 
 
