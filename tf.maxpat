@@ -40,6 +40,42 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 9.0, 185.0, 94.0, 22.0 ],
+					"text" : "script start 2 3 4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 7.0, 134.0, 150.0, 34.0 ],
+					"text" : "0.5. Restart the main script"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 765.0, 18.0, 150.0, 34.0 ],
+					"text" : "4. save/load your trained models"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-40",
 					"linecount" : 2,
 					"maxclass" : "message",
@@ -58,7 +94,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 768.0, 156.0, 111.0, 22.0 ],
+					"patching_rect" : [ 785.0, 101.0, 111.0, 22.0 ],
 					"text" : "load weights kieran"
 				}
 
@@ -70,7 +106,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 626.0, 156.0, 114.0, 22.0 ],
+					"patching_rect" : [ 783.0, 69.0, 114.0, 22.0 ],
 					"text" : "save weights kieran"
 				}
 
@@ -78,58 +114,144 @@
 , 			{
 				"box" : 				{
 					"data" : 					{
-						"kieran" : [ 							{
-								"data" : 								{
-									"0" : 0.927409112453461,
-									"1" : -0.10581861436367,
-									"2" : 0.110250025987625,
-									"3" : -1.001458287239075,
-									"4" : 0.689840376377106,
-									"5" : 0.396656483411789,
-									"6" : -1.090744495391846,
-									"7" : -0.033253565430641
-								}
+						"kieran" : 						{
+							"weights" : [ 								{
+									"data" : 									{
+										"0" : 1.012908458709717,
+										"1" : -0.620146811008453,
+										"2" : -0.129914328455925,
+										"3" : 0.541027724742889,
+										"4" : 0.19341653585434,
+										"5" : 0.360722154378891,
+										"6" : 0.09280800819397,
+										"7" : 1.268574237823486
+									}
 ,
-								"shape" : [ 2, 4 ]
-							}
-, 							{
-								"data" : 								{
-									"0" : -0.04672335088253,
-									"1" : 0.441919326782227,
-									"2" : -0.127905443310738,
-									"3" : 0.395313948392868
+									"shape" : [ 2, 4 ]
 								}
+, 								{
+									"data" : 									{
+										"0" : -0.258607089519501,
+										"1" : -0.583316743373871,
+										"2" : 0.113245263695717,
+										"3" : -0.051932688802481
+									}
 ,
-								"shape" : [ 4 ]
-							}
-, 							{
-								"data" : 								{
-									"0" : 0.714273393154144,
-									"1" : 0.45893207192421,
-									"2" : 0.772015511989594,
-									"3" : -0.403766572475433,
-									"4" : 0.378416150808334,
-									"5" : 0.486913919448853,
-									"6" : -0.327280908823013,
-									"7" : -0.424903750419617,
-									"8" : -0.59527575969696,
-									"9" : -0.619619905948639,
-									"10" : -0.706632375717163,
-									"11" : -0.025489492341876
+									"shape" : [ 4 ]
 								}
+, 								{
+									"data" : 									{
+										"0" : 0.631340265274048,
+										"1" : -0.096657283604145,
+										"2" : 0.223567947745323,
+										"3" : 0.624955534934998,
+										"4" : 0.085933394730091,
+										"5" : -1.187804460525513,
+										"6" : 0.306746393442154,
+										"7" : 0.066343888640404,
+										"8" : 0.77016669511795,
+										"9" : 0.780229866504669,
+										"10" : 1.183329939842224,
+										"11" : 0.801688551902771
+									}
 ,
-								"shape" : [ 4, 3 ]
-							}
-, 							{
-								"data" : 								{
-									"0" : -0.584373593330383,
-									"1" : 0.079081602394581,
-									"2" : 0.754254102706909
+									"shape" : [ 4, 3 ]
 								}
+, 								{
+									"data" : 									{
+										"0" : -0.4663907289505,
+										"1" : 0.079067341983318,
+										"2" : 0.319364786148071
+									}
 ,
-								"shape" : [ 3 ]
-							}
+									"shape" : [ 3 ]
+								}
+ ],
+							"model" : 							{
+								"class_name" : "Sequential",
+								"config" : 								{
+									"name" : "sequential_1",
+									"layers" : [ 										{
+											"class_name" : "Dense",
+											"config" : 											{
+												"units" : 4,
+												"activation" : "linear",
+												"use_bias" : 1,
+												"kernel_initializer" : 												{
+													"class_name" : "VarianceScaling",
+													"config" : 													{
+														"scale" : 1,
+														"mode" : "fan_avg",
+														"distribution" : "normal",
+														"seed" : null
+													}
+
+												}
+,
+												"bias_initializer" : 												{
+													"class_name" : "Zeros",
+													"config" : 													{
+
+													}
+
+												}
+,
+												"kernel_regularizer" : null,
+												"bias_regularizer" : null,
+												"activity_regularizer" : null,
+												"kernel_constraint" : null,
+												"bias_constraint" : null,
+												"name" : "dense_Dense1",
+												"trainable" : 1,
+												"batch_input_shape" : [ null, 2 ],
+												"dtype" : "float32"
+											}
+
+										}
+, 										{
+											"class_name" : "Dense",
+											"config" : 											{
+												"units" : 3,
+												"activation" : "linear",
+												"use_bias" : 1,
+												"kernel_initializer" : 												{
+													"class_name" : "VarianceScaling",
+													"config" : 													{
+														"scale" : 1,
+														"mode" : "fan_avg",
+														"distribution" : "normal",
+														"seed" : null
+													}
+
+												}
+,
+												"bias_initializer" : 												{
+													"class_name" : "Zeros",
+													"config" : 													{
+
+													}
+
+												}
+,
+												"kernel_regularizer" : null,
+												"bias_regularizer" : null,
+												"activity_regularizer" : null,
+												"kernel_constraint" : null,
+												"bias_constraint" : null,
+												"name" : "dense_Dense2",
+												"trainable" : 1
+											}
+
+										}
  ]
+								}
+,
+								"keras_version" : "tfjs-layers 4.20.0",
+								"backend" : "tensor_flow.js"
+							}
+
+						}
+
 					}
 ,
 					"id" : "obj-33",
@@ -212,7 +334,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 128.0, 18.0, 150.0, 20.0 ],
+					"patching_rect" : [ 187.0, 25.0, 150.0, 20.0 ],
 					"text" : "1. Add training points"
 				}
 
@@ -225,7 +347,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 128.0, 49.0, 24.0, 24.0 ]
+					"patching_rect" : [ 204.0, 62.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -236,7 +358,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "bang", "bang", "bang", "bang" ],
-					"patching_rect" : [ 128.0, 118.0, 52.0, 22.0 ],
+					"patching_rect" : [ 204.0, 101.0, 52.0, 22.0 ],
 					"text" : "t b b b b"
 				}
 
@@ -248,7 +370,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 171.0, 215.0, 107.0, 22.0 ],
+					"patching_rect" : [ 204.0, 215.0, 107.0, 22.0 ],
 					"text" : "prepend dataPoint"
 				}
 
@@ -260,7 +382,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 262.0, 163.0, 55.0, 22.0 ],
+					"patching_rect" : [ 266.0, 146.0, 55.0, 22.0 ],
 					"text" : "3 3 5 6 7"
 				}
 
@@ -272,7 +394,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 330.0, 163.0, 55.0, 22.0 ],
+					"patching_rect" : [ 266.0, 170.0, 55.0, 22.0 ],
 					"text" : "4 4 7 8 9"
 				}
 
@@ -284,7 +406,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 197.0, 163.0, 55.0, 22.0 ],
+					"patching_rect" : [ 204.0, 170.0, 55.0, 22.0 ],
 					"text" : "2 2 3 4 5"
 				}
 
@@ -296,7 +418,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 128.0, 163.0, 55.0, 22.0 ],
+					"patching_rect" : [ 204.0, 146.0, 55.0, 22.0 ],
 					"text" : "1 1 1 2 3"
 				}
 
@@ -341,7 +463,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 526.0, 284.0, 400.0, 220.0 ],
+					"patching_rect" : [ 523.0, 342.0, 400.0, 220.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -389,6 +511,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-11", 0 ]
 				}
 
 			}
