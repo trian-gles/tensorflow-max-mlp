@@ -60,14 +60,19 @@ async function getWeights() {
 
 maxApi.addHandler("save", (dictId, key) => {
   maxApi.getDict(dictId).then((dict) => {
-    getWeights().then((weights) => {
-      dict[key] = {}
-      dict[key].weights = weights;
-      dict[key].model = model.toJSON(null, false);
+    getJson().then((json) => {
+      dict[key] = json
       maxApi.setDict(dictId, dict);
     });
   });
 });
+
+async function getJson() {
+  let json = {}
+  json.weights = await getWeights();
+  json.model = model.toJSON(null, false);
+  return json;
+}
 
 
 maxApi.addHandler("load", (dictId, key) => {
@@ -91,4 +96,8 @@ maxApi.addHandler("load", (dictId, key) => {
       });
   });
 });
+
+maxApi.addHandler("dump_weights", () => {
+  getJson().then((json) => {maxApi.outlet("weights", json);});
+})
 

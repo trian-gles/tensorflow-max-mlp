@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 164.0, 165.0, 948.0, 575.0 ],
+		"rect" : [ 164.0, 165.0, 732.0, 575.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,59 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 160.0, 336.0, 80.0, 22.0 ],
+					"text" : "route weights"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "dict.view",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 28.0, 399.0, 231.0, 75.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-21",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 676.0, 225.0, 86.0, 22.0 ],
+					"text" : "dump_weights"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
+					"patching_rect" : [ 85.0, 353.0, 61.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0,
+						"legacy" : 0,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "dict"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-11",
 					"maxclass" : "message",
@@ -77,13 +130,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-40",
-					"linecount" : 2,
+					"linecount" : 5,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 237.0, 453.0, 50.0, 36.0 ],
-					"text" : "9. 10. 11."
+					"patching_rect" : [ 281.0, 450.0, 50.0, 77.0 ],
+					"text" : "weights dictionary u266000897"
 				}
 
 			}
@@ -94,8 +147,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 785.0, 101.0, 111.0, 22.0 ],
-					"text" : "load weights kieran"
+					"patching_rect" : [ 785.0, 101.0, 107.0, 22.0 ],
+					"text" : "load myDict kieran"
 				}
 
 			}
@@ -106,151 +159,14 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 783.0, 69.0, 114.0, 22.0 ],
-					"text" : "save weights kieran"
+					"patching_rect" : [ 783.0, 69.0, 110.0, 22.0 ],
+					"text" : "save myDict kieran"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"data" : 					{
-						"kieran" : 						{
-							"weights" : [ 								{
-									"data" : 									{
-										"0" : 1.012908458709717,
-										"1" : -0.620146811008453,
-										"2" : -0.129914328455925,
-										"3" : 0.541027724742889,
-										"4" : 0.19341653585434,
-										"5" : 0.360722154378891,
-										"6" : 0.09280800819397,
-										"7" : 1.268574237823486
-									}
-,
-									"shape" : [ 2, 4 ]
-								}
-, 								{
-									"data" : 									{
-										"0" : -0.258607089519501,
-										"1" : -0.583316743373871,
-										"2" : 0.113245263695717,
-										"3" : -0.051932688802481
-									}
-,
-									"shape" : [ 4 ]
-								}
-, 								{
-									"data" : 									{
-										"0" : 0.631340265274048,
-										"1" : -0.096657283604145,
-										"2" : 0.223567947745323,
-										"3" : 0.624955534934998,
-										"4" : 0.085933394730091,
-										"5" : -1.187804460525513,
-										"6" : 0.306746393442154,
-										"7" : 0.066343888640404,
-										"8" : 0.77016669511795,
-										"9" : 0.780229866504669,
-										"10" : 1.183329939842224,
-										"11" : 0.801688551902771
-									}
-,
-									"shape" : [ 4, 3 ]
-								}
-, 								{
-									"data" : 									{
-										"0" : -0.4663907289505,
-										"1" : 0.079067341983318,
-										"2" : 0.319364786148071
-									}
-,
-									"shape" : [ 3 ]
-								}
- ],
-							"model" : 							{
-								"class_name" : "Sequential",
-								"config" : 								{
-									"name" : "sequential_1",
-									"layers" : [ 										{
-											"class_name" : "Dense",
-											"config" : 											{
-												"units" : 4,
-												"activation" : "linear",
-												"use_bias" : 1,
-												"kernel_initializer" : 												{
-													"class_name" : "VarianceScaling",
-													"config" : 													{
-														"scale" : 1,
-														"mode" : "fan_avg",
-														"distribution" : "normal",
-														"seed" : null
-													}
-
-												}
-,
-												"bias_initializer" : 												{
-													"class_name" : "Zeros",
-													"config" : 													{
-
-													}
-
-												}
-,
-												"kernel_regularizer" : null,
-												"bias_regularizer" : null,
-												"activity_regularizer" : null,
-												"kernel_constraint" : null,
-												"bias_constraint" : null,
-												"name" : "dense_Dense1",
-												"trainable" : 1,
-												"batch_input_shape" : [ null, 2 ],
-												"dtype" : "float32"
-											}
-
-										}
-, 										{
-											"class_name" : "Dense",
-											"config" : 											{
-												"units" : 3,
-												"activation" : "linear",
-												"use_bias" : 1,
-												"kernel_initializer" : 												{
-													"class_name" : "VarianceScaling",
-													"config" : 													{
-														"scale" : 1,
-														"mode" : "fan_avg",
-														"distribution" : "normal",
-														"seed" : null
-													}
-
-												}
-,
-												"bias_initializer" : 												{
-													"class_name" : "Zeros",
-													"config" : 													{
-
-													}
-
-												}
-,
-												"kernel_regularizer" : null,
-												"bias_regularizer" : null,
-												"activity_regularizer" : null,
-												"kernel_constraint" : null,
-												"bias_constraint" : null,
-												"name" : "dense_Dense2",
-												"trainable" : 1
-											}
-
-										}
- ]
-								}
-,
-								"keras_version" : "tfjs-layers 4.20.0",
-								"backend" : "tensor_flow.js"
-							}
-
-						}
 
 					}
 ,
@@ -259,7 +175,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 768.0, 215.0, 133.0, 22.0 ],
+					"patching_rect" : [ 768.0, 215.0, 129.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 1,
 						"legacy" : 0,
@@ -267,7 +183,7 @@
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict weights @embed 1"
+					"text" : "dict myDict @embed 1"
 				}
 
 			}
@@ -502,7 +418,16 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"order" : 1,
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-40", 1 ],
+					"order" : 0,
 					"source" : [ "obj-1", 0 ]
 				}
 
@@ -518,6 +443,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-12", 0 ]
 				}
 
 			}
@@ -588,6 +520,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
 					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-23", 0 ]
 				}
 
 			}
