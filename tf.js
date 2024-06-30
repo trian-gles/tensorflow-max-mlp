@@ -39,6 +39,7 @@ maxApi.addHandler("dataPoint", (...data) => {
   ysArr.push(data.slice(inputShape));
 });
 
+
 maxApi.addHandler("predict", (...data) => {
   data.map((item) => parseFloat(item));
   model.predict(tf.tensor2d([data], [1, inputShape])).array().then((value) => {
@@ -74,14 +75,11 @@ async function getJson() {
   return json;
 }
 
-
-maxApi.addHandler("load", (dictId, key) => {
-  maxApi.getDict(dictId).then((dict) => {
-    let arch = dict[key].model;
-    tf.models.modelFromJSON(dict[key].model).then((m) => {
+function loadWeights(dict){
+    tf.models.modelFromJSON(dict.model).then((m) => {
         model = m
 
-        let data = dict[key].weights;
+        let data = dict.weights;
         let tensors = [];
         data.forEach(item => {
           let shape = item.shape;
@@ -94,6 +92,15 @@ maxApi.addHandler("load", (dictId, key) => {
         });
         model.setWeights(tensors);
       });
+}
+
+
+maxApi.addHandler("set_weights", loadWeights);
+
+
+maxApi.addHandler("load", (dictId, key) => {
+  maxApi.getDict(dictId).then((dict) => {
+    loadWeights(dict[key]);
   });
 });
 
