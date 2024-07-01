@@ -31,6 +31,8 @@ maxApi.addHandler("train", (epochs) => {
 
   // Train the model using the data.
   model.fit(xs, ys, {epochs});
+
+  maxApi.outlet("training_done");
 });
 
 maxApi.addHandler("dataPoint", (...data) => {
