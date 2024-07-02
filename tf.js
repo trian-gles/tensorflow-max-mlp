@@ -35,7 +35,7 @@ maxApi.addHandler("train", (epochs) => {
   maxApi.outlet("training_done");
 });
 
-maxApi.addHandler("dataPoint", (...data) => {
+maxApi.addHandler("data_point", (...data) => {
   data.map((item) => parseFloat(item));
   xsArr.push(data.slice(0, inputShape));
   ysArr.push(data.slice(inputShape));

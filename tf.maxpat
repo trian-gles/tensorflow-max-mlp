@@ -479,8 +479,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 204.0, 215.0, 107.0, 22.0 ],
-					"text" : "prepend dataPoint"
+					"patching_rect" : [ 204.0, 215.0, 112.0, 22.0 ],
+					"text" : "prepend data_point"
 				}
 
 			}
