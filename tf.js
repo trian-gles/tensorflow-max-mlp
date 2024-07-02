@@ -41,6 +41,17 @@ maxApi.addHandler("dataPoint", (...data) => {
   ysArr.push(data.slice(inputShape));
 });
 
+maxApi.addHandler("clear_data", () => {
+  xsArr = [];
+  ysArr = [];
+});
+
+maxApi.addHandler("dump_data", () => {
+  for (let i=0; i<xsArr.length; i++) {
+    maxApi.outlet(xsArr[i].concat(ysArr[i]));
+  }
+});
+
 
 maxApi.addHandler("predict", (...data) => {
   data.map((item) => parseFloat(item));
