@@ -21,8 +21,7 @@ model.add(tf.layers.dense({units: outputShape}));
 var xsArr = [];
 var ysArr = [];
 
-
-maxApi.addHandler("train", (epochs) => {
+async function train(epochs) {
   model.compile({loss: 'meanSquaredError', optimizer: 'sgd'});
 
   // aggregate data
@@ -30,10 +29,13 @@ maxApi.addHandler("train", (epochs) => {
   const ys = tf.tensor2d(ysArr, [xsArr.length, outputShape]);
 
   // Train the model using the data.
-  model.fit(xs, ys, {epochs});
+  await model.fit(xs, ys, {epochs});
 
   maxApi.outlet("training_done");
-});
+
+}
+
+maxApi.addHandler("train", train);
 
 maxApi.addHandler("data_point", (...data) => {
   data.map((item) => parseFloat(item));
@@ -44,8 +46,14 @@ maxApi.addHandler("data_point", (...data) => {
 maxApi.addHandler("clear_data", () => {
   xsArr = [];
   ysArr = [];
-  model = tf.sequential();
 });
+
+maxApi.addHandler("clear_model", () => {
+  model = tf.sequential();
+  model.add(tf.layers.dense({units: hiddenSize, inputShape: [inputShape], activation: 'relu'}));
+  model.add(tf.layers.dense({units: outputShape}));
+});
+
 
 maxApi.addHandler("dump_data", () => {
   for (let i=0; i<xsArr.length; i++) {

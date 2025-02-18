@@ -2,8 +2,8 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
+			"major" : 9,
+			"minor" : 0,
 			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -11,34 +11,56 @@
 ,
 		"classnamespace" : "box",
 		"rect" : [ 44.0, 125.0, 1036.0, 622.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-46",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 420.0, 355.0, 32.0, 22.0 ],
+					"text" : "print"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-45",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 339.0, 84.0, 150.0, 33.0 ],
+					"text" : "Will output `training_done` when finished"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 854.0, 84.0, 153.0, 33.0 ],
+					"presentation_linecount" : 2,
+					"text" : "clear all weights (does not clear the training data)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 855.5, 126.0, 74.0, 22.0 ],
+					"text" : "clear_model"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-44",
 					"maxclass" : "comment",
@@ -68,7 +90,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 854.0, 175.0, 150.0, 48.0 ],
+					"patching_rect" : [ 854.0, 175.0, 153.0, 47.0 ],
 					"text" : "clear all cached training data points (does not clear the weights)"
 				}
 
@@ -93,8 +115,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 199.0, 355.0, 50.0, 36.0 ],
-					"text" : "1 1 1 2 3"
+					"patching_rect" : [ 199.0, 355.0, 50.0, 35.0 ],
+					"text" : "9. 10. 11."
 				}
 
 			}
@@ -117,7 +139,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 510.0, 97.0, 150.0, 62.0 ],
+					"patching_rect" : [ 510.0, 97.0, 150.0, 60.0 ],
 					"text" : "Send a dictionary with weights and architecture prepended by \"set_weights\" to load"
 				}
 
@@ -153,7 +175,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 676.0, 172.0, 150.0, 48.0 ],
+					"patching_rect" : [ 676.0, 172.0, 150.0, 47.0 ],
 					"text" : "output a dictionary containing model architecture and weights"
 				}
 
@@ -218,7 +240,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 134.0, 150.0, 34.0 ],
+					"patching_rect" : [ 7.0, 134.0, 150.0, 33.0 ],
 					"text" : "0.5. Restart the main script"
 				}
 
@@ -398,7 +420,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 491.0, 238.0, 150.0, 62.0 ],
+					"patching_rect" : [ 491.0, 238.0, 150.0, 60.0 ],
 					"text" : "args are input shape, output shape, and size of the single hidden layer.  Always Relu activation."
 				}
 
@@ -410,7 +432,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 339.0, 44.0, 152.0, 34.0 ],
+					"patching_rect" : [ 339.0, 44.0, 152.0, 33.0 ],
 					"text" : "Uses basic SGD optimizer with 0.01 learning rate"
 				}
 
@@ -551,7 +573,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 351.0, 84.0, 75.0, 22.0 ],
+					"patching_rect" : [ 336.0, 131.0, 75.0, 22.0 ],
 					"text" : "train 100000"
 				}
 
@@ -572,7 +594,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 560.0, 353.0, 400.0, 220.0 ],
+					"patching_rect" : [ 560.0, 355.0, 400.0, 220.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -601,12 +623,17 @@
 						"args" : [ 2, 3, 4 ],
 						"autostart" : 1,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 1
 					}
 ,
-					"text" : "node.script tf.js @watch 1 @autostart 1 @args 2 3 4"
+					"text" : "node.script tf.js @watch 1 @autostart 1 @args 2 3 4",
+					"textfile" : 					{
+						"filename" : "tf.js",
+						"flags" : 0,
+						"embed" : 0,
+						"autowatch" : 1
+					}
+
 				}
 
 			}
@@ -622,6 +649,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-10", 0 ]
 				}
 
 			}
@@ -760,6 +794,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-46", 0 ],
+					"source" : [ "obj-38", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-4", 0 ]
 				}
@@ -787,6 +828,7 @@
 
 			}
  ],
+		"originid" : "pat-6",
 		"dependency_cache" : [ 			{
 				"name" : "fit_jweb_to_bounds.js",
 				"bootpath" : "C74:/packages/Node for Max/patchers/debug-monitor",
@@ -807,7 +849,7 @@
 			}
 , 			{
 				"name" : "tf.js",
-				"bootpath" : "~/OneDrive/Documents/Max 8/tensorflow-max",
+				"bootpath" : "~/Documents/Max 8/Library/tensorflow-max-mlp",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
