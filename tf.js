@@ -44,6 +44,7 @@ maxApi.addHandler("data_point", (...data) => {
 maxApi.addHandler("clear_data", () => {
   xsArr = [];
   ysArr = [];
+  model = tf.sequential();
 });
 
 maxApi.addHandler("dump_data", () => {
