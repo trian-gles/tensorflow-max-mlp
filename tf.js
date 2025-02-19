@@ -43,15 +43,25 @@ maxApi.addHandler("data_point", (...data) => {
   ysArr.push(data.slice(inputShape));
 });
 
-maxApi.addHandler("clear_data", () => {
+function clearData(){
   xsArr = [];
   ysArr = [];
-});
+}
 
-maxApi.addHandler("clear_model", () => {
+maxApi.addHandler("clear_data", clearData);
+
+function clearModel(){
   model = tf.sequential();
   model.add(tf.layers.dense({units: hiddenSize, inputShape: [inputShape], activation: 'relu'}));
   model.add(tf.layers.dense({units: outputShape}));
+}
+
+maxApi.addHandler("clear_model", clearModel);
+
+
+maxApi.addHandler("clear_all", () => {
+  clearData();
+  clearModel();
 });
 
 
